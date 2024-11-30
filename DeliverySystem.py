@@ -21,12 +21,9 @@ class DeliverySystem:
         """
         return self.algorithm.find_shortest_path(self.graph, start, end)
 
-
-# Exemplo de uso
 if __name__ == "__main__":
     delivery_system = DeliverySystem()
 
-    # Adiciona rotas no sistema
     delivery_system.add_route("Warehouse", "CityA", 10)
     delivery_system.add_route("Warehouse", "CityB", 15)
     delivery_system.add_route("CityA", "CityC", 12)
@@ -34,7 +31,6 @@ if __name__ == "__main__":
     delivery_system.add_route("CityC", "CityD", 2)
     delivery_system.add_route("CityA", "CityD", 15)
 
-    # Calcula o menor caminho do armazém até CityD
     start_point = "Warehouse"
     end_point = "CityD"
     path, total_cost = delivery_system.get_shortest_route(start_point, end_point)
