@@ -2,6 +2,7 @@ from typing import Dict, List, Tuple
 
 class Graph:
     """Gerencia o grafo com os nós e arestas."""
+    
     def __init__(self):
         self.adjacency_list: Dict[str, List[Tuple[str, int]]] = {}
 

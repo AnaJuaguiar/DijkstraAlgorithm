@@ -1,12 +1,13 @@
 from typing import List
 import matplotlib.pyplot as plt
 import networkx as nx
-from networkx import Graph
 
-from DeliverySystem import DeliverySystem
+from Graph import Graph
+
 
 class GraphVisualizer:
     """Responsável por criar representações gráficas de um grafo."""
+    
     def __init__(self, graph: Graph):
         self.graph = graph
 
@@ -32,23 +33,3 @@ class GraphVisualizer:
             nx.draw_networkx_edges(nx_graph, pos, edgelist=path_edges, edge_color="red", width=2)
 
         plt.show()
-
-if __name__ == "__main__":
-    delivery_system = DeliverySystem()
-
-    delivery_system.add_route("Warehouse", "CityA", 10)
-    delivery_system.add_route("Warehouse", "CityB", 15)
-    delivery_system.add_route("CityA", "CityC", 12)
-    delivery_system.add_route("CityB", "CityC", 10)
-    delivery_system.add_route("CityC", "CityD", 2)
-    delivery_system.add_route("CityA", "CityD", 15)
-
-    start_point = "Warehouse"
-    end_point = "CityD"
-    path, total_cost = delivery_system.get_shortest_route(start_point, end_point)
-
-    print(f"Menor caminho de {start_point} para {end_point}: {' -> '.join(path)}")
-    print(f"Custo total: {total_cost}")
-
-    visualizer = GraphVisualizer(delivery_system.graph)
-    visualizer.draw_graph(path)

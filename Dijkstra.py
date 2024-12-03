@@ -1,10 +1,10 @@
 import heapq
 from typing import Dict, List, Tuple
-
 from Graph import Graph
 
 class Dijkstra:
     """Implementa o algoritmo de Dijkstra para encontrar o menor caminho."""
+    
     def find_shortest_path(self, graph: Graph, start: str, end: str) -> Tuple[List[str], int]:
         """
         Encontra o menor caminho entre dois nós no grafo.
@@ -24,6 +24,9 @@ class Dijkstra:
                 self._relax_edge(
                     current_node, neighbor, cost, distances, previous_nodes, priority_queue
                 )
+
+        if distances[end] == float("inf"):
+            raise ValueError(f"Não há caminho disponível entre {start} e {end}.")
 
         return self._reconstruct_path(previous_nodes, start, end), distances[end]
 
