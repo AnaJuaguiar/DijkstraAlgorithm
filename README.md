@@ -54,6 +54,9 @@ O ponto de entrada do projeto. Responsável por:
 - Definir os pontos de partida e destino.
 - Calcular e exibir o menor caminho e seu custo.
 - Visualizar o grafo e o menor caminho destacado.
+- Para alterar os pontos onde o caminho deve começar e terminar, selecionar nas linhas 
+start_point e 
+end_point
 
 ---
 
