@@ -1,9 +1,5 @@
-
-
-
 import DeliverySystem
 import GraphVisualizer
-
 
 if __name__ == "__main__":
     delivery_system = DeliverySystem.DeliverySystem()
@@ -22,7 +18,7 @@ if __name__ == "__main__":
 
     # Define pontos de partida e destino
     start_point = "Warehouse"
-    end_point = "CityC"
+    end_point = "CityD"
 
     try:
         # Calcula o menor caminho
